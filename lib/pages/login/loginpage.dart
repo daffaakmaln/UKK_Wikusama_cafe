@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ukk_kasir/pages/admin/navbar.dart';
-import 'package:ukk_kasir/pages/kasir/cashier.dart';
+import 'package:ukk_kasir/pages/cashier/cashier.dart';
 import 'package:ukk_kasir/pages/login/login.dart';
 import 'package:ukk_kasir/pages/manager/dashboardm.dart';
 import 'package:ukk_kasir/services/auth/auth_service.dart';
@@ -138,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-Future <void> _login() async {
+Future<void> _login() async {
   String username = _usernameController.text;
   String password = _passwordController.text;
 
@@ -157,13 +158,13 @@ Future <void> _login() async {
   );
 
   try {
-    // Await the login call
+    // Login and get result
     Map<String, dynamic>? result = await _authService.login(username, password, '58');
-
     Navigator.of(context).pop(); // Close loading indicator
-    print("result: $result");
     if (result != null) {
-      String role = result['user']['role'];
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? role = prefs.getString('user_role');
+
       if (role == 'admin') {
         Navigator.pushReplacement(
           context,
@@ -187,10 +188,10 @@ Future <void> _login() async {
     }
   } catch (e) {
     Navigator.of(context).pop(); // Close loading indicator
-    // Provide more context about the error
     _showPopup(context, 'An error occurred: ${e.toString()}. Please try again.');
   }
 }
+
 }
 
 void _showPopup(BuildContext context, String message) {

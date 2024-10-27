@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ukk_kasir/pages/admin/dashboard.dart';
+import 'package:ukk_kasir/pages/admin/edit_user.dart';
 import 'package:ukk_kasir/pages/admin/edit.table.dart';
 import 'package:ukk_kasir/pages/admin/edit_menu.dart';
-import 'package:ukk_kasir/pages/admin/edit_user.dart';
+import 'package:ukk_kasir/pages/admin/landing_dash.dart';
 import 'package:ukk_kasir/style/styles.dart';
 
 class Navbar extends StatefulWidget {
@@ -16,10 +16,10 @@ class _NavbarState extends State<Navbar> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    AdminDashboard(),
+    DashboardUI(),
     MenuUI(),
     TableUI(),
-    UserUI()
+    EdituserUI()
   ];
 
   void _onItemTapped(int index) {

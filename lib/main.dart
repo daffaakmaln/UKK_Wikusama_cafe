@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ukk_kasir/pages/admin/dashboard.dart';
+import 'package:ukk_kasir/pages/admin/edit_user.dart';
 import 'package:ukk_kasir/pages/admin/navbar.dart';
-import 'package:ukk_kasir/pages/kasir/cashier.dart';
+import 'package:ukk_kasir/pages/cashier/cashier.dart';
 import 'package:ukk_kasir/pages/login/login.dart';
 import 'package:ukk_kasir/pages/login/loginpage.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: Navbar(),
+      home: LoginPage(),
     );
   }
 }

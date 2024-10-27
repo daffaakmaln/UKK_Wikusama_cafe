@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ukk_kasir/data/model_data.dart';
-import 'package:ukk_kasir/pages/kasir/checklist.dart';
+import 'package:ukk_kasir/pages/cashier/checklist.dart';
 import 'package:ukk_kasir/pages/login/login.dart';
 import 'package:ukk_kasir/style/styles.dart';
 import 'package:ukk_kasir/utils/popup.dart';
