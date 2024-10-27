@@ -1,6 +1,9 @@
 # ukk_kasir
 
-A new Flutter project.
+A Flutter POS project.
+Wikusama Cafe is a cashier system. The system consists of 3 types of users, namely cashiers, manager and admin. The cashier will serve the order and give a table number as an identity to facilitate the waiter to deliver the order. identity to make it easier for waiters to deliver orders. Customers will pay at the cashier before leaving the cafe. Cafe only accepts payment in cash.
+If the customer orders additional food/drinks, the customer must go to the cashier and the cashier can add the order data. cashier can add the order data. Cafe manager is in charge of monitoring the transaction data.
+
 
 ## Getting Started
 
