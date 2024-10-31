@@ -1,3 +1,5 @@
+# COPYRIGHT (c) DAFFA AKMAL NAFI 2024, ALL RIGHTS RESERVED
+
 # Miscellaneous
 *.class
 *.log
@@ -42,3 +44,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
