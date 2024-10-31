@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ukk_kasir/pages/admin/navbar.dart';
-import 'package:ukk_kasir/pages/cashier/cashier.dart';
+import 'package:ukk_kasir/pages/cashier/cashier_order.dart';
 import 'package:ukk_kasir/pages/login/login.dart';
 import 'package:ukk_kasir/pages/manager/dashboardm.dart';
 import 'package:ukk_kasir/services/auth/auth_service.dart';
@@ -173,7 +173,7 @@ Future<void> _login() async {
       } else if (role == 'cashier') {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => MenuPage()),
         );
       } else if (role == 'manager') {
         Navigator.pushReplacement(
@@ -184,7 +184,7 @@ Future<void> _login() async {
         _showPopup(context, 'Unknown role. Please contact support.');
       }
     } else {
-      _showPopup(context, 'Login failed. Please check your credentials.');
+      _showPopup(context, 'Login failed. Please insert the correct username and password.');
     }
   } catch (e) {
     Navigator.of(context).pop(); // Close loading indicator

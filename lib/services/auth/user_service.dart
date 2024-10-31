@@ -35,5 +35,6 @@ class UserService {
     await prefs.remove('access_token');
     await prefs.remove('user_role');
     await prefs.remove('user_id');
+    await prefs.remove('username');
   }
 }

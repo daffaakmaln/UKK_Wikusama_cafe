@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 10),
           // Subtitle Text
           Text(
-            'Aplikasi Kasir No.1 Se-Indonesia. Kasir Cafe\nDeveloped by. Akmalnafi',
+            'Aplikasi Kasir Cafe Wikusama. \nDeveloped by. Akmalnafi',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,

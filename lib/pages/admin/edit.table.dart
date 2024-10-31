@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ukk_kasir/pages/login/loginpage.dart';
-import 'package:ukk_kasir/services/admin/table/get_table.dart';
+import 'package:ukk_kasir/services/allrole/get_table.dart';
 import 'package:ukk_kasir/services/admin/table/delete_table.dart';
 import 'package:ukk_kasir/services/admin/table/update_table.dart';
 import 'package:ukk_kasir/services/admin/table/add_table.dart';

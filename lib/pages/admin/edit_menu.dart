@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ukk_kasir/pages/admin/utils/page_addmenu.dart';
+import 'package:ukk_kasir/pages/admin/utils/page_updatemenu.dart';
 import 'package:ukk_kasir/pages/login/loginpage.dart';
 import 'package:ukk_kasir/services/auth/user_service.dart';
-import 'package:ukk_kasir/services/admin/menu/getMenu.dart';
+import 'package:ukk_kasir/services/allrole/getMenu.dart';
 import 'package:ukk_kasir/style/styles.dart';
 
 class MenuUI extends StatefulWidget {
@@ -65,65 +67,94 @@ class _MenuUIState extends State<MenuUI> {
                     height: 50,
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        // Implement the function to add a new menu
-                        // You can navigate to a new page for adding a menu
-                        print("Add Menu Button Pressed");
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    AddMenuPage(),
+                              ),
+                            );
                       },
-                      icon: Icon(Icons.add, color: Colors.white,),
-                      label: Text("Add Menu", style: TextStyle(color: Colors.white, fontSize: 20),),
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        "Add Menu",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Styles.themeColor,
                       ),
                     ),
                   ),
                   SizedBox(height: 10), // Add spacing between button and grid
-                  Expanded(
+                    Expanded(
                     child: GridView.builder(
                       gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 0.7, // Adjust the aspect ratio to make the grid items taller
                       ),
                       itemCount: menuItems.length,
                       itemBuilder: (context, index) {
-                        final item = menuItems[index];
-                        final imageUrl =
-                            '$baseUrl${item['menu_image_name']}'; // Full URL for the image
-                        return Card(
-                          elevation: 4,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 200,
-                                  height: 100, // Set a specific height
-                                  child: Image.network(
-                                    imageUrl,
-                                    fit: BoxFit.cover,
-                                    errorBuilder:
-                                        (context, error, stackTrace) => Icon(
-                                            Icons.broken_image,
-                                            color: Colors.grey),
-                                  ),
-                                ),
-                                SizedBox(height: 8.0),
-                                Text(
-                                  'Name: ${item['menu_name']}',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text('Type: ${item['type']}'),
-                                Text('Price: Rp. ${item['price']}'),
-                              ],
-                            ),
+                      final item = menuItems[index];
+                      final imageUrl =
+                        '$baseUrl${item['menu_image_name']}'; // Full URL for the image
+
+                      return GestureDetector(
+                        onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) =>
+                            UpdateMenuPage(menuItem: item),
                           ),
                         );
+                        },
+                        child: Card(
+                        elevation: 4,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                            width: 200,
+                            height: 150, // Set a specific height
+                            child: Image.network(
+                              imageUrl,
+                              fit: BoxFit.cover,
+                              errorBuilder:
+                                (context, error, stackTrace) => Icon(
+                                  Icons.broken_image,
+                                  color: Colors.grey),
+                            ),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                            '${item['menu_name']}',
+                            style:
+                              TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Text('Type: ${item['type']}'),
+                            Text(
+                            'Price: Rp. ${item['price']}',
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                          ),
+                        ),
+                        ),
+                      );
                       },
                     ),
-                  ),
+                    ),
                 ],
               ),
             ),
