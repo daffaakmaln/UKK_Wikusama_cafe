@@ -1,19 +1,38 @@
 # ukk_kasir
 
-A Flutter POS project.
-Wikusama Cafe is a cashier system. The system consists of 3 types of users, namely cashiers, manager and admin. The cashier will serve the order and give a table number as an identity to facilitate the waiter to deliver the order. identity to make it easier for waiters to deliver orders. Customers will pay at the cashier before leaving the cafe. Cafe only accepts payment in cash.
-If the customer orders additional food/drinks, the customer must go to the cashier and the cashier can add the order data. cashier can add the order data. Cafe manager is in charge of monitoring the transaction data.
+A Flutter POS (Point of Sale) project for Wikusama Cafe. This cashier system supports three types of users: **cashiers**, **managers**, and **admins**. The system is designed to streamline cafe operations, making order management and transaction tracking easier.
 
+## Project Overview
+
+In the Wikusama Cafe POS system:
+- The **cashier** handles orders, assigns table numbers for identification, and processes payments in cash.
+- The **manager** monitors transaction data.
+- The **admin** has overall system access and management privileges.
+
+Customers can make additional orders by returning to the cashier, where their data can be updated. Payment is made before customers leave the cafe.
+
+## Features
+
+- **Order Management:** Cashiers can manage orders, assign table numbers, and track customer orders.
+- **User Roles:** Distinct permissions and capabilities for cashiers, managers, and admins.
+- **Transaction Monitoring:** Managers can view and analyze transaction data.
+- **Offline-first Design:** Ensures minimal data requirements.
+- **Table Numbering System:** Helps waiters quickly locate the correct tables.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+Before you begin, ensure you have met the following requirements:
+- [Flutter SDK](https://docs.flutter.dev/get-started/install): The Flutter Software Development Kit (SDK) allows you to create and run Flutter applications.
+- Dart version compatible with Flutter SDK.
+- A recent version of [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com/): These integrated development environments (IDEs) provide essential tools for building and testing the app.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To set up the project on your local machine:
+
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/your-username/ukk_kasir.git
+   cd ukk_kasir
