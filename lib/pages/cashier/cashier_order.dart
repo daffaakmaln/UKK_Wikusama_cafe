@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ukk_kasir/pages/cashier/checklist_order.dart';
+import 'package:ukk_kasir/pages/cashier/editprofile.dart';
 import 'package:ukk_kasir/pages/cashier/showOrder.dart';
 import 'package:ukk_kasir/pages/login/loginpage.dart';
 import 'package:ukk_kasir/services/allrole/getMenu.dart';
@@ -164,6 +165,16 @@ class _MenuPageState extends State<MenuPage> {
                                   );
                                 },
                                 child: Icon(Icons.timelapse,
+                                    size: 40, color: Colors.white),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => EditProfile(userID: userId!,)),
+                                  );
+                                },
+                                child: Icon(Icons.person,
                                     size: 40, color: Colors.white),
                               ),
                               // Exit Icon (triggers a logout confirmation dialog)

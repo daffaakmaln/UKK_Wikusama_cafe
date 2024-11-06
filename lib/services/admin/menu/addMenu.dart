@@ -8,6 +8,7 @@ Future<bool> addMenu({
   required String menuDescription,
   required int price,
   required String imagePath,
+  
 }) async {
   const String baseUrl = 'https://ukkcafe.smktelkom-mlg.sch.id/api/menu';
   SharedPreferences prefs = await SharedPreferences.getInstance();
