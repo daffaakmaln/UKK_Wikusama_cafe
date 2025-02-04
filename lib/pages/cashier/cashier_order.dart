@@ -82,7 +82,7 @@ class _MenuPageState extends State<MenuPage> {
               SizedBox(height: 10),
               TextField(
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Quantity (Default: 1)",
                   border: OutlineInputBorder(),
                 ),
@@ -137,7 +137,7 @@ class _MenuPageState extends State<MenuPage> {
                     Container(
                       width: double.infinity,
                       height: 300,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
                               'assets/images/welcome.png'), // Add your background image here
@@ -203,7 +203,7 @@ class _MenuPageState extends State<MenuPage> {
                           if (username != null && userRole != null)
                             Text(
                               '$userRole - $username \nYour ID : $userId',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 24,
                                   color: Colors.white,
                                   fontStyle: FontStyle.italic),

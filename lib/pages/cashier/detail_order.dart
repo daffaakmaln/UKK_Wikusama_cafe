@@ -94,8 +94,6 @@ class _DetailOrderPageState extends State<DetailOrderPage> {
   }
 }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

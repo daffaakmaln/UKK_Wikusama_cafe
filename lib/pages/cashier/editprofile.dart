@@ -11,7 +11,6 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfileState extends State<EditProfile> {
   final TextEditingController _nameController = TextEditingController();
-  String profilePicturePath = 'assets/profile.jpg';
 
   @override
   void initState() {
